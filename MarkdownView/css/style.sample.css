@@ -1,0 +1,173 @@
+@charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-size: 80%;
+	line-height: 1.4;
+	word-wrap: 	break-word;
+	margin: 0 3em 200px 3em;
+}
+
+h1 {
+    font-size: 160%;
+	font-weight: bold;
+	line-height: 1.2;
+	margin: 1.2em -0.5em;
+	padding: 5px;
+	border-width: 3px 0;
+	border-style: solid;
+}
+
+h1:before {
+	content:"■ ";
+}
+
+h2 {
+	font-size: 140%;
+	font-weight: bold;
+	line-height: 1.2;
+	margin: 1.2em -0.5em;
+	padding: 0 5px;
+	border-width: 0 0 1px 0;
+	border-style: solid;
+}
+
+h3, h4, h5, h6 {
+    font-weight: bold;
+	margin: 0.7em -0.5em;
+	padding: 0 5px;
+}
+
+h3 {
+	font-size: 140%;
+}
+
+h4 {
+	font-size: 120%;
+}
+
+h5 {
+	font-size: 100%;
+}
+
+h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+p {
+	margin: 1em 0;
+}
+
+ul {
+	margin-left: 2em;
+}
+
+ol {
+	margin-left: 2em;
+}
+
+dl {
+	margin-left: 1em;
+}
+
+dt {
+	font-weight: bold;
+	margin-left: 1em;
+	padding: 3px;
+}
+
+dd {
+	margin-bottom: 1em;
+	margin-left: 3em;
+}
+
+table, th, td {
+	border: 1px solid;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 1em 2em;
+}
+
+th, td {
+	font-size: 100%;
+	text-align: left;
+	padding: 5px;
+}
+
+blockquote {
+	margin: 10px;
+	padding: 0;
+	overflow: auto;
+}
+
+pre {
+	font-size: 90%;
+	line-height: 1.4;
+	margin: 10px;
+	padding: 6px;
+	border: 1px solid;
+	white-space: pre;
+	word-wrap: normal;
+	overflow: auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	border: 0;
+}
+
+/***/
+
+body {
+	color: #666;
+}
+
+h1 {
+	color: #666;
+	background-color: #eee;
+	border-color: #ddd;
+}
+
+h2, h3, h4, h5, h6 {
+	color: #666;
+	border-color: #ddd;
+}
+
+
+table, th, td {
+	border-color: #999;
+}
+
+th {
+	color: #666;
+	background-color: #eee;
+}
+
+blockquote {
+	color: #888;
+	background-color: #eee;
+}
+
+pre {
+	color: #333;
+	border-color: #999;
+}
+
+a {
+	color: #66f;
+}
