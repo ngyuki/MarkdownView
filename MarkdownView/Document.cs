@@ -6,7 +6,6 @@ using System.Diagnostics;
 using System.IO;
 using System.ComponentModel;
 using System.Web;
-using MarkdownSharp;
 
 namespace MarkdownView
 {
@@ -252,8 +251,8 @@ namespace MarkdownView
         {
             if (IsOpen())
             {
-				var md = new MarkdownSharp.Markdown();
-				return ApplyBody(md.Transform(_input));
+				var translator = new Translator();
+				return ApplyBody(translator.Transform(_input));
             }
             else
             {

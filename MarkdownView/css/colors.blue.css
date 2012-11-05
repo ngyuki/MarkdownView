@@ -33,9 +33,15 @@ blockquote {
 	background-color: #F1F7F5;
 }
 
-pre {
+code {
 	color: #333;
 	border-color: #51A4AA;
+	background-color: #FBFFFD;
+}
+
+pre {
+	border-color: #51A4AA;
+	background-color: #FBFFFD;
 }
 
 a {
