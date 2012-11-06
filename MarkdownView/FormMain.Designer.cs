@@ -137,7 +137,6 @@
 			this.uiWebBrowser.Name = "uiWebBrowser";
 			this.uiWebBrowser.Size = new System.Drawing.Size(159, 91);
 			this.uiWebBrowser.TabIndex = 2;
-			this.uiWebBrowser.WebBrowserShortcutsEnabled = false;
 			this.uiWebBrowser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.uiWebBrowser_DocumentCompleted);
 			this.uiWebBrowser.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.uiWebBrowser_Navigating);
 			// 
