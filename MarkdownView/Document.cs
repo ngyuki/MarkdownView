@@ -90,6 +90,7 @@ namespace MarkdownView
 			
 			try
 			{
+				path = Path.GetFullPath(path);
 				string dir = Path.GetDirectoryName(path);
 				string fn = Path.GetFileName(path);
 
