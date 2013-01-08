@@ -82,6 +82,16 @@ namespace MarkdownView
 			WindowState = setting.WindowState;
             
             uiButtonMonitor.Checked = setting.AutoReload;
+			uiButtonWebApi.Checked = setting.WebApiFlg && setting.WebApiUrl.Length > 0;
+
+			if (uiButtonWebApi.Checked)
+			{
+				_document.Translator = new Translator.WebApiTranslator(Settings.Default.WebApiUrl);
+			}
+			else
+			{
+				_document.Translator = new Translator.StandardTranslator();
+			}
         }
 
 		/// <summary>
@@ -91,6 +101,7 @@ namespace MarkdownView
 		{
 			var setting = Settings.Default;
 
+			setting.WebApiFlg = uiButtonWebApi.Checked;
 			setting.AutoReload = uiButtonMonitor.Checked;
 
 			setting.WindowState = WindowState;
@@ -320,6 +331,7 @@ namespace MarkdownView
             uiButtonReload.Enabled = _document.IsOpen();
 			uiButtonExecute.Enabled = _document.IsOpen();
             uiButtonBrowser.Enabled = _document.IsOpen();
+			uiButtonWebApi.Enabled = Settings.Default.WebApiUrl.Length > 0;
         }
         
         /// <summary>
@@ -470,22 +482,24 @@ namespace MarkdownView
 			}
 		}
 
-		/// <summary>
-		/// コマンド GitHub
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void uiButtonGitHub_Click(object sender, EventArgs e)
-		{
-			if (uiButtonWebApi.Checked)
-			{
-				_document.Translator = new Translator.WebApiTranslator();
-			}
-			else
-			{
-				_document.Translator = new Translator.StandardTranslator();
-			}
-		}
+        /// <summary>
+        /// コマンド WebApiSet
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uiMenuWebApiSet_Click(object sender, EventArgs e)
+        {
+            using (var box = new InputUrlBox())
+            {
+				box.Url = Settings.Default.WebApiUrl;
+
+				if (box.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+				{
+					Settings.Default.WebApiUrl = box.Url;
+					UpdateControlState();
+				}
+            }
+        }
 
 		/// <summary>
 		/// コマンド 終了
@@ -507,6 +521,23 @@ namespace MarkdownView
 			using (var box = new AboutBox())
 			{
 				box.ShowDialog();
+			}
+        }
+
+		/// <summary>
+		/// コマンド WebApiCheck
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void uiButtonWebApi_Click(object sender, EventArgs e)
+		{
+			if (uiButtonWebApi.Checked)
+			{
+				_document.Translator = new Translator.WebApiTranslator(Settings.Default.WebApiUrl);
+			}
+			else
+			{
+				_document.Translator = new Translator.StandardTranslator();
 			}
 		}
     }

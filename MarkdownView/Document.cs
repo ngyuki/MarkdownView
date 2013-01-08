@@ -78,14 +78,17 @@ namespace MarkdownView
 			{
 				_translator = value;
 
-				if (this.Closed != null)
+				if (this.IsOpen())
 				{
-					this.Closed(this, new EventArgs());
-				}
+					if (this.Closed != null)
+					{
+						this.Closed(this, new EventArgs());
+					}
 
-				if (this.Opened != null)
-				{
-					this.Opened(this, new EventArgs());
+					if (this.Opened != null)
+					{
+						this.Opened(this, new EventArgs());
+					}
 				}
 			}
 		}

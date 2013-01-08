@@ -9,6 +9,13 @@ namespace MarkdownView.Translator
 {
 	class WebApiTranslator : TranslatorInterface
 	{
+		private string _url;
+
+		public WebApiTranslator(string url)
+		{
+			_url = url;
+		}
+
 		public string Transform(string input)
 		{
 			try
@@ -16,10 +23,8 @@ namespace MarkdownView.Translator
 				WebClient wc = new WebClient();
 				
 				wc.Headers.Add(HttpRequestHeader.ContentType, "text/plain");
-				
-				string url = @"http://redcarpet-preview.herokuapp.com/markdown/raw";
 
-				byte[] bytes = wc.UploadData(url, Encoding.UTF8.GetBytes(input));
+				byte[] bytes = wc.UploadData(this._url, Encoding.UTF8.GetBytes(input));
 
 				return Encoding.UTF8.GetString(bytes);
 			}
