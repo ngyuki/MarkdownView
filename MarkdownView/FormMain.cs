@@ -236,7 +236,7 @@ namespace MarkdownView
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void uiWebBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
+		{
 			uiWebBrowser.Document.Body.InnerHtml = _document.GetInnerHtml();
         }
 
@@ -280,7 +280,7 @@ namespace MarkdownView
 						uiWebBrowser.Document.Body.InnerHtml = _document.GetInnerHtml();
 					}
 				}
-				catch (IOException ex)
+				catch (IOException)
 				{
 					// TODO: タイミングによっては書き込みの排他制御と競合することがあるので問答無用で閉じるのはどうか
 					// とりあえず握りつぶすことにします
@@ -467,6 +467,23 @@ namespace MarkdownView
 			catch (Exception ex)
 			{
 				ShowException(ex);
+			}
+		}
+
+		/// <summary>
+		/// コマンド GitHub
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void uiButtonGitHub_Click(object sender, EventArgs e)
+		{
+			if (uiButtonWebApi.Checked)
+			{
+				_document.Translator = new Translator.WebApiTranslator();
+			}
+			else
+			{
+				_document.Translator = new Translator.StandardTranslator();
 			}
 		}
 

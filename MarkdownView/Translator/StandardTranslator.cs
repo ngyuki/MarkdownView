@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MarkdownView
+namespace MarkdownView.Translator
 {
-	class Translator
+	class StandardTranslator : TranslatorInterface
 	{
 		public string Transform(string input)
 		{
@@ -14,6 +14,22 @@ namespace MarkdownView
 
 			//var md = new anrControls.Markdown();
 			//return md.Transform(input);
+		}
+
+		public string CustomCssFilename
+		{
+			get
+			{
+				return "css/style.css";
+			}
+		}
+
+		public string DefaultCssFilename
+		{
+			get
+			{
+				return "css/style.default.css";
+			}
 		}
 	}
 }

@@ -6,6 +6,8 @@ using System.Diagnostics;
 using System.IO;
 using System.ComponentModel;
 using System.Web;
+//
+using MarkdownView.Translator;
 
 namespace MarkdownView
 {
@@ -41,11 +43,17 @@ namespace MarkdownView
         private FileSystemWatcher _watcher = null;
 
 		/// <summary>
+		/// トランスレーター
+		/// </summary>
+		private TranslatorInterface _translator = null;
+
+		/// <summary>
 		/// コンストラクタ
 		/// </summary>
         public Document(ISynchronizeInvoke form)
         {
 			_form = form;
+			_translator = new StandardTranslator();
         }
 
 		/// <summary>
@@ -55,6 +63,32 @@ namespace MarkdownView
         {
             ClearTempList();
         }
+
+		/// <summary>
+		/// トランスレーター
+		/// </summary>
+		public TranslatorInterface Translator
+		{
+			get
+			{
+				return _translator;
+			}
+
+			set
+			{
+				_translator = value;
+
+				if (this.Closed != null)
+				{
+					this.Closed(this, new EventArgs());
+				}
+
+				if (this.Opened != null)
+				{
+					this.Opened(this, new EventArgs());
+				}
+			}
+		}
 
         /// <summary>
 		/// 一時ファイルを削除する
@@ -216,11 +250,11 @@ namespace MarkdownView
 
 			string appdir = System.Windows.Forms.Application.StartupPath;
 
-			string cssfn = Path.Combine(appdir, "css/style.css");
+			string cssfn = Path.Combine(appdir, _translator.CustomCssFilename);
 
 			if (File.Exists(cssfn) == false)
 			{
-				cssfn = Path.Combine(appdir, "css/style.default.css");
+				cssfn = Path.Combine(appdir, _translator.DefaultCssFilename);
 			}
 
 			html = html.Replace("{$css}", HttpUtility.HtmlEncode(new Uri(cssfn).AbsoluteUri));
@@ -252,8 +286,7 @@ namespace MarkdownView
         {
             if (IsOpen())
             {
-				var translator = new Translator();
-				return ApplyBody(translator.Transform(_input));
+				return ApplyBody(_translator.Transform(_input));
             }
             else
             {

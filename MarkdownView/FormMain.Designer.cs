@@ -36,6 +36,7 @@
 			this.uiButtonExecute = new System.Windows.Forms.ToolStripButton();
 			this.uiButtonBrowser = new System.Windows.Forms.ToolStripButton();
 			this.uiButtonAbout = new System.Windows.Forms.ToolStripButton();
+			this.uiButtonWebApi = new System.Windows.Forms.ToolStripButton();
 			this.uiWebBrowser = new System.Windows.Forms.WebBrowser();
 			this.uiMenuStrip = new System.Windows.Forms.MenuStrip();
 			this.ファイルToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +61,8 @@
             this.uiButtonExport,
             this.uiButtonExecute,
             this.uiButtonBrowser,
-            this.uiButtonAbout});
+            this.uiButtonAbout,
+            this.uiButtonWebApi});
 			this.uiToolStrip.Location = new System.Drawing.Point(0, 26);
 			this.uiToolStrip.Name = "uiToolStrip";
 			this.uiToolStrip.Size = new System.Drawing.Size(747, 25);
@@ -129,6 +131,17 @@
 			this.uiButtonAbout.Size = new System.Drawing.Size(23, 22);
 			this.uiButtonAbout.Text = "バージョン情報";
 			this.uiButtonAbout.Click += new System.EventHandler(this.uiMenuAbout_Click);
+			// 
+			// uiButtonWebApi
+			// 
+			this.uiButtonWebApi.CheckOnClick = true;
+			this.uiButtonWebApi.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.uiButtonWebApi.Image = ((System.Drawing.Image)(resources.GetObject("uiButtonWebApi.Image")));
+			this.uiButtonWebApi.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.uiButtonWebApi.Name = "uiButtonWebApi";
+			this.uiButtonWebApi.Size = new System.Drawing.Size(32, 22);
+			this.uiButtonWebApi.Text = "API";
+			this.uiButtonWebApi.Click += new System.EventHandler(this.uiButtonGitHub_Click);
 			// 
 			// uiWebBrowser
 			// 
@@ -275,6 +288,7 @@
 		private System.Windows.Forms.ToolStripMenuItem uiMenuExit;
 		private System.Windows.Forms.ToolStripButton uiButtonExecute;
 		private System.Windows.Forms.ToolStripMenuItem uiMenuExecute;
+		private System.Windows.Forms.ToolStripButton uiButtonWebApi;
 
     }
 }
