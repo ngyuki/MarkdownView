@@ -113,9 +113,6 @@
     <Content Include="css\webapi.default.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="css\github.highlight.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="css\redmine.application.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
