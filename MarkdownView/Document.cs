@@ -260,7 +260,28 @@ namespace MarkdownView
 				cssfn = Path.Combine(appdir, _translator.DefaultCssFilename);
 			}
 
-			html = html.Replace("{$css}", HttpUtility.HtmlEncode(new Uri(cssfn).AbsoluteUri));
+			string cssurl = HttpUtility.HtmlEncode(new Uri(cssfn).AbsoluteUri);
+
+			string baseurl = "about:blank";
+
+			if (_filename.Length > 0)
+			{
+				if (File.Exists(_filename))
+				{
+					baseurl = HttpUtility.HtmlEncode(new Uri(_filename).AbsoluteUri);
+				}
+
+				/*
+				string dirname = Path.GetDirectoryName(_filename);
+
+				if (Directory.Exists(dirname))
+				{
+					baseurl = HttpUtility.HtmlEncode(new Uri(dirname).AbsoluteUri);
+				}*/
+			}
+
+			html = html.Replace("{$css}", cssurl);
+			html = html.Replace("{$base}", baseurl);
 			html = html.Replace("{$body}", body);
 
 			return html;
