@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>res\icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -130,6 +133,7 @@
     </Content>
     <Content Include="res\body.html" />
     <Content Include="res\html.html" />
+    <None Include="res\icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MarkdownSharp\MarkdownSharp.csproj">

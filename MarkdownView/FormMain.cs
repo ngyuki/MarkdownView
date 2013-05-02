@@ -23,6 +23,8 @@ namespace MarkdownView
         public FormMain()
         {
 			InitializeComponent();
+
+			this.Icon = Resources.icon;
             
             // ドキュメントのイベントハンドラ
 			_document = new Document(this);
