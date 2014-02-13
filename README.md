@@ -12,17 +12,11 @@ Markdown ファイルのプレビューを行う .NET アプリです。
 
 ### 最新版
 
-- [MarkdownView-0.0.3.zip](http://sdrv.ms/106rku7)
-
+- [MarkdownView-0.0.4.zip](https://github.com/ngyuki/MarkdownView/releases/download/v0.0.4/MarkdownView-0.0.4.zip)
 
 ### アーカイブ
 
-- [MarkdownView - SkyDrive](http://sdrv.ms/18ftDRY)
-
-
-### アーカイブ(旧)
-
-- [MarkdownView - GitHub](https://github.com/ngyuki/MarkdownView/downloads)
+- [MarkdownView - Releases](https://github.com/ngyuki/MarkdownView/releases)
 
 
 インストール
