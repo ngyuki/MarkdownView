@@ -1,0 +1,47 @@
+.highlightwrap {
+    margin: 1em 1em 1em 1.6em;
+    padding: 0;
+    overflow-x: auto;
+    border: 1px solid #dadada;
+}
+
+.highlightwrap table {
+    margin: 0;
+    padding: 0;
+    border: 0px none;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fafafa;
+}
+
+.highlightwrap table tbody tr td pre {
+    font-family: "Menlo", "Liberation Mono", "Consolas", "Courier New", "andale mono", "lucida console", monospace;
+    font-size: 12px;
+}
+
+.highlightwrap table td.linenos {
+    padding: 4px 4px 4px 8px;
+    background: #eee;
+    border: 0px none;
+    width: 14px;
+}
+
+.highlightwrap table td.linenos pre {
+    background: #eee;
+    text-align: right;
+}
+
+.highlightwrap table td.code {
+    border: 0px solid #e2e2e2;
+    padding: 0 8px;
+    background: #fafafa;
+}
+
+.highlightwrap table tr td pre {
+    border: 0px solid #e2e2e2;
+    margin: 0px;
+    padding: 0px;
+    white-space: pre;
+    font-size: 12px;
+    line-height: 16px;
+}

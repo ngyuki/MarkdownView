@@ -1,5 +1,5 @@
 @charset "utf-8";
 
-@import url('redmine.application.css');
-@import url('redmine.scm.css');
-@import url('redmine.override.css');
+@import url('style.sample.css');
+@import url('rouge.highlight.css');
+@import url('rouge.wrap.css');

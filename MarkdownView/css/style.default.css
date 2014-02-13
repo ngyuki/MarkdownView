@@ -1,5 +1,9 @@
 @charset "utf-8";
 
 @import url('style.sample.css');
-@import url('colors.blue.css');
-@import url('font.css');
+
+body {
+    padding: 0;
+    margin: 1em 2em 200px 2em;
+    max-width: inherit;
+}

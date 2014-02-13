@@ -1,16 +1,16 @@
 @charset "utf-8";
 
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-	font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 	font-size: 90%;
 	line-height: 1.4;
 	word-wrap: 	break-word;
-	margin: 0 3em 200px 3em;
+	margin: 1em 2em 200px 2em;
 }
 
 h1 {
@@ -28,10 +28,10 @@ h1:before {
 }
 
 h2 {
-	font-size: 140%;
-	font-weight: bold;
-	line-height: 1.2;
-	margin: 1.2em -0.5em;
+    font-size: 140%;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 1.2em -0.5em;
 	padding: 0 5px;
 	border-width: 0 0 1px 0;
 	border-style: solid;
@@ -56,20 +56,21 @@ h5 {
 }
 
 h6 {
-	font-size: 100%;
-	font-weight: normal;
+    font-size: 100%;
+    font-weight: normal;
 }
 
 p {
-	margin: 1em 0;
+    margin: 0.5em 0;
 }
 
-ul {
+ul, ol {
+    margin-left: 2em;
 	margin-left: 2em;
 }
 
-ol {
-	margin-left: 2em;
+li {
+	margin: 0.5em 0;
 }
 
 dl {
@@ -93,7 +94,7 @@ table, th, td {
 
 table {
     border-collapse: collapse;
-    margin: 1em 2em;
+    margin: 1em 0.5em;
 }
 
 th, td {
@@ -104,8 +105,14 @@ th, td {
 
 blockquote {
 	margin: 10px;
-	padding: 0;
+	padding: 0.5em 0.8em;
 	overflow: auto;
+	border: 0 solid #ccc;
+	border-width: 0 0 0 4px;
+}
+
+blockquote p {
+    margin: 0;
 }
 
 pre {
@@ -146,37 +153,43 @@ img {
 /***/
 
 body {
-	color: #666;
+	color: #555;
 }
 
 h1 {
-	color: #666;
-	background-color: #eee;
+	background-color: #fcfcfc;
 	border-color: #ddd;
 }
 
 h2, h3, h4, h5, h6 {
-	color: #666;
 	border-color: #ddd;
 }
-
 
 table, th, td {
 	border-color: #999;
 }
 
 th {
-	color: #666;
-	background-color: #eee;
+	background-color: #fcfcfc;
 }
 
 blockquote {
 	color: #888;
-	background-color: #eee;
+	background-color: #fcfcfc;
+	border-color: #ddd;
+}
+
+blockquote h1,
+blockquote h2,
+blockquote h3,
+blockquote h4,
+blockquote h5,
+blockquote h6 {
+	color: #666;
 }
 
 pre {
-	color: #333;
+	color: #444;
 	border-color: #999;
 }
 
