@@ -18,26 +18,37 @@ namespace MarkdownView
 
             try
             {
-				Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(Application_ThreadException);
-				Application.Run(new FormMain());
+                SettingUpgrade();
+                Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(Application_ThreadException);
+                Application.Run(new FormMain());
             }
-			catch (Exception ex)
-			{
-				ShowException(ex);
+            catch (Exception ex)
+            {
+                ShowException(ex);
             }
         }
 
-		static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
-		{
-			ShowException(e.Exception);
-		}
+        static void SettingUpgrade()
+        {
+            if (Properties.Settings.Default.IsUpgrade == false)
+            {
+                Properties.Settings.Default.Upgrade();
+                Properties.Settings.Default.IsUpgrade = true;
+                Properties.Settings.Default.Save();
+            }
+        }
 
-		public static void ShowException(Exception ex)
-		{
-			using (var box = new AboutBox())
-			{
-				MessageBox.Show(ex.Message, box.AssemblyTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-		}
+        static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
+        {
+            ShowException(e.Exception);
+        }
+
+        public static void ShowException(Exception ex)
+        {
+            using (var box = new AboutBox())
+            {
+                MessageBox.Show(ex.Message, box.AssemblyTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
