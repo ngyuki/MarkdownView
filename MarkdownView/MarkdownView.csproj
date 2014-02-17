@@ -40,6 +40,12 @@
     <ApplicationIcon>res\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ColorCode">
+      <HintPath>..\packages\ColorCode.1.0.1\lib\ColorCode.dll</HintPath>
+    </Reference>
+    <Reference Include="MarkdownSharp">
+      <HintPath>..\packages\MarkdownSharp.1.13.0.0\lib\35\MarkdownSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -96,6 +102,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -137,13 +144,6 @@
     <Content Include="res\body.html" />
     <Content Include="res\html.html" />
     <None Include="res\icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MarkdownSharp\MarkdownSharp.csproj">
-      <Project>{37619116-CCE8-465A-8B1F-081CA53364BB}</Project>
-      <Name>MarkdownSharp</Name>
-      <Private>True</Private>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
