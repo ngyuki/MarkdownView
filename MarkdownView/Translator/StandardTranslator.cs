@@ -23,7 +23,7 @@ namespace MarkdownView.Translator
         
         public StandardTranslator()
         {
-            const string pattern = @"^\s*```\s*(\S*)\s*^(.*?)$\s*```\s*$";
+            const string pattern = @"^```[ \t]*(\S*)[ \t]*\r?\n(.*?)\r?\n```[ \t]*\r?$";
             
             _markdownParser = new MarkdownSharp.Markdown();
             
