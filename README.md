@@ -102,3 +102,7 @@ WebAPI 使用時は通常の CSS とは別の CSS が使用されます。次の
 
  1. webapi.css
  2. webapi.default.css
+
+### License
+
+[MIT License](LICENSE)

@@ -8,7 +8,18 @@ License
 : [MIT License](http://opensource.org/licenses/mit-license.php)
 
 Used
-: MarkdownSharp/
+: NuGet
+
+ColorCode
+-------------
+URL
+: [ColorCode](http://colorcode.codeplex.com/)
+
+License
+: [Microsoft Public License](http://colorcode.codeplex.com/license)
+
+Used
+: NuGet
 
 FAMFAMFAM Silk Icons
 --------------------
